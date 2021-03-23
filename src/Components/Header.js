@@ -3,7 +3,7 @@ import { ImageWrapper, Image, Title, TitleArticle, Wrapper, Description } from '
 // import { Button } from 'carbon-components-react'
 // import { Login20 } from '@carbon/icons-react';
 
-import Logo from '../assets/images/pexel-light.jpg'
+import Logo from '../assets/images/ICPO-MKT-HomePage-max-carousel.jpg'
 import '../assets/styles/Header.css'
 // import { Link } from 'react-router-dom'
 
@@ -12,14 +12,14 @@ export const Header = ({isLogged}) => (
   <>
     <div className="bx--grid grid" style={{margin:0}}>
       <div className="bx--row">
-        <div className="bx--col bx--col-sm-4">
+        <div className="bx--col bx--col-sm-4" style={{display: 'flex', justifyContent: 'center', alignItems:'center'}}>
           <div className="header__wrapper_info" style={{marginTop: '70px'}}>
-            <Title>Aplicación Broker de IBM</Title>
+            <Title>Aplicación Broker de IBM para administradores</Title>
             <div className="header__wrapper_description" >
-              <h3>
+              {/* <h3>
                 Una forma mas rapida de poder hacer el proceso, <br />
                 para poder vender productos tecnologícos de IBM
-              </h3>
+              </h3> */}
             </div>
               {/* {
                 isLogged ? 
@@ -43,20 +43,20 @@ export const Header = ({isLogged}) => (
   </>
 );
 
-export const Article = ({isLogged}) => (
-  <>
-    <div className="bx--grid">
-      <div className="bx--row">
-        <div className="bx--col" style={{display: 'flex', justifyContent:'flex-start', alignItems:'center', marginTop: 50}}>
-          <Description>Visión general</Description>
-        </div>
-        <div className="bx--col">
-          <Wrapper>
-            <TitleArticle>¿Que es usar la aplicación de broker de IBM?</TitleArticle>
-            <Description>IBM cuenta con una infinidad de servicios los cuales puede brindar y prestar a otras empresas, la aplicación de bróker ayuda a poder realizar un proceso de solicitud de manera más fácil y eficiente. Se necesita realizar el llenado de un formulario el cual será enviado a nuestro validadores los cuales se encargarán de revisar la información enviada para poder aceptar que la empresa registrada es óptima para poder revender los productos de hardware de IBM</Description>
-          </Wrapper>
-        </div>
-      </div>
-    </div>
-  </>
-);
+// export const Article = ({isLogged}) => (
+//   <>
+//     <div className="bx--grid">
+//       <div className="bx--row">
+//         <div className="bx--col" style={{display: 'flex', justifyContent:'flex-start', alignItems:'center', marginTop: 50}}>
+//           <Description>Visión general</Description>
+//         </div>
+//         <div className="bx--col">
+//           <Wrapper>
+//             <TitleArticle>¿Que es usar la aplicación de broker de IBM?</TitleArticle>
+//             <Description>IBM cuenta con una infinidad de servicios los cuales puede brindar y prestar a otras empresas, la aplicación de bróker ayuda a poder realizar un proceso de solicitud de manera más fácil y eficiente. Se necesita realizar el llenado de un formulario el cual será enviado a nuestro validadores los cuales se encargarán de revisar la información enviada para poder aceptar que la empresa registrada es óptima para poder revender los productos de hardware de IBM</Description>
+//           </Wrapper>
+//         </div>
+//       </div>
+//     </div>
+//   </>
+// );

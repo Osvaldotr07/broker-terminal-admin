@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Row, Column } from 'carbon-components-react'
 import LoginForm  from '../Components/LoginComponents/LoginForm'
-import Logo from '../assets/images/hero-login-image.jpg'
+import Logo from '../assets/images/registerimage.jpg'
 import { ImageLogin } from '../assets/styles/General-styles'
 
 

@@ -34,7 +34,7 @@ const LoginForm = ({ loginUser, isLogged, err }) => {
 
   const handleChange = async(value) => {
     console.log(value)
-    let catResponse = await fetch("https://damp-tor-32976.herokuapp.com/api/auth/toke-recaptcha", {
+    let catResponse = await fetch("https://evening-chamber-26239.herokuapp.com/api/auth/toke-recaptcha", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -132,7 +132,7 @@ const LoginForm = ({ loginUser, isLogged, err }) => {
                 >
                   Enviar
                 </Button>
-                <Link to="/register">
+                {/* <Link to="/register">
                   <Button
                     style={{ marginLeft: "10px" }}
                     kind="primary"
@@ -140,7 +140,7 @@ const LoginForm = ({ loginUser, isLogged, err }) => {
                   >
                     Crear cuenta
                   </Button>
-                </Link>
+                </Link> */}
               </>
             </Form>
             {err ? (

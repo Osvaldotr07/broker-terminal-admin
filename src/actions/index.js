@@ -52,7 +52,7 @@ export const loginUser = ({ email, password }, redirectUrl) => {
     return async (dispatch) => {
         try {
             let response = await axios({
-                url: 'https://damp-tor-32976.herokuapp.com/api/auth/sign-in',
+                url: 'https://evening-chamber-26239.herokuapp.com/api/auth/sign-in',
                 method: 'post',
                 headers: {
                     "Content-type": "application/json"
@@ -83,7 +83,7 @@ export const loginUser = ({ email, password }, redirectUrl) => {
 export const registerUser = (payload, redirectUrl) => {
     return async (dispatch) => {
         try{
-            let response = await axios.post('https://damp-tor-32976.herokuapp.com/api/auth/sign-up', payload)
+            let response = await axios.post('https://evening-chamber-26239.herokuapp.com/api/auth/sign-up', payload)
             if(response.statusText) {
                 dispatch(registerUser(response.data))
                 window.location.href = redirectUrl
@@ -98,7 +98,7 @@ export const registerUser = (payload, redirectUrl) => {
 export const createOneForm = (payload, redirectUrl, token) => {
     return async (dispatch) => {
         try {
-            let response = await axios('https://damp-tor-32976.herokuapp.com/api/forms/createForm', {
+            let response = await axios('https://evening-chamber-26239.herokuapp.com/api/forms/createForm', {
                 method: 'post',
                 headers: {  
                     "Content-type": "application/json",
@@ -123,7 +123,7 @@ export const createOneForm = (payload, redirectUrl, token) => {
 export const getForms = (token, email) => {
     return async(dispatch) => {
         try{
-            let response = await axios('https://damp-tor-32976.herokuapp.com/api/forms', {
+            let response = await axios('https://evening-chamber-26239.herokuapp.com/api/forms', {
                 method: 'post',
                 headers: {
                     "Content-type": "application/json",
@@ -154,7 +154,7 @@ export const getForms = (token, email) => {
 export const deleteForm = (token, id) => {
     return async (dispatch) => {
         try {
-            let response = await axios(`https://damp-tor-32976.herokuapp.com/api/forms/${id}`, {
+            let response = await axios(`https://evening-chamber-26239.herokuapp.com/api/forms/${id}`, {
                 method: 'delete',
                 headers: {
                     "Content-type": "application/json",
@@ -176,7 +176,7 @@ export const deleteForm = (token, id) => {
 export const updateOneForm = (payload, redirectUrl, token) => {
     return async (dispatch) => {
         try {
-            let response = await axios('https://damp-tor-32976.herokuapp.com/api/forms/updateForm', {
+            let response = await axios('https://evening-chamber-26239.herokuapp.com/api/forms/updateForm', {
                 method: 'put',
                 headers: {
                     "Content-type": "application/json",
@@ -200,7 +200,7 @@ export const updateOneForm = (payload, redirectUrl, token) => {
 export const sendUserEmail = (email, token) => {
     return async(dispatch) => {
         try{
-            let response = await axios('https://damp-tor-32976.herokuapp.com/email/send', {
+            let response = await axios('https://evening-chamber-26239.herokuapp.com/email/send', {
                 method:  'GET',
                 headers: {
                     "Content-type": "application/json",
