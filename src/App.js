@@ -9,7 +9,6 @@ import FormTableWrapper from './Containers/FormTableWrapper'
 import { Navbar } from './Components/Navbar'
 import StatusTracker from './Containers/StatusTracker'
 
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Error404 from './Containers/Error404'
 import LoginPage from './Containers/LoginPage'
