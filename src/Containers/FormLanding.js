@@ -18,7 +18,7 @@ import formFiledDefatult from '../utils/dataForm'
 import { UserInfoSchema, CompanyName, CompanyAddressSchema } from '../Schemas/formSchema'
 
 const FormLanding = ({ item }) => {
-    const [step, setStep] = useState(0)
+    const [step, setStep] = useState(4)
     const [formData, setFormData] = useState(window.location.pathname === '/edit' ? item[0] : formFiledDefatult)
 
     const nextStep = () => setStep((prev) => prev + 1)
@@ -113,9 +113,9 @@ const FormLanding = ({ item }) => {
         <>
             <Grid style={{ margin: '10px' }}>
                 <Row>
-                    <Column sm={2} md={2} lg={4}>
+                    {/* <Column sm={2} md={2} lg={4}>
                         <ProgressIndicatorComponent vertical step={step} spaceEqually />
-                    </Column>
+                    </Column> */}
                     <Column >
                         {handleStep(step)}
                     </Column>

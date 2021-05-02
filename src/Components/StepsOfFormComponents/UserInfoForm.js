@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 //Componentes
 import { Column, Grid, Row, Button } from "carbon-components-react";
-import { Field, setFieldValue } from "formik";
+import { Field } from "formik";
 
 import { TextInputForm } from "../FormsComponets";
 import { connect } from "react-redux";
@@ -31,6 +31,7 @@ const UserInfoForm = (
 ) => {
   return (
     <>
+      
       <WrapperForm
         validationSchema={validationSchema}
         formData={formData}

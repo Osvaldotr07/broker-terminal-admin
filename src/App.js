@@ -7,7 +7,7 @@ import Footer from './Components/Footer'
 import FormLanding from './Containers/FormLanding'
 import FormTableWrapper from './Containers/FormTableWrapper'
 import { Navbar } from './Components/Navbar'
-import StatusTracker from './Containers/StatusTracker'
+import Statistics from './Containers/StaticsContainer'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Error404 from './Containers/Error404'
@@ -31,10 +31,10 @@ const App = ({isLogged, email}) => {
         <Switch>
           <Route path="/" component={Home} exact />
           <PrivateRoute path="/init" exact component={LandingPage} isLogged={isLogged}/>
-          <PrivateRoute path='/form' exact component={FormLanding} isLogged={isLogged}/>
+          {/* <PrivateRoute path='/form' exact component={FormLanding} isLogged={isLogged}/> */}
           <PrivateRoute path="/myforms" exact component={FormTableWrapper} isLogged={isLogged}/>
           <PrivateRoute path="/edit" exact component={FormLanding} isLogged={isLogged}/>
-          <PrivateRoute path="/tracker" exact component={StatusTracker} isLogged={isLogged}/>
+          <PrivateRoute path="/statistics" exact component={Statistics} isLogged={isLogged}/>
           <Route path="/login" exact component={isLogged ? LandingPage : LoginPage} />
           <Route path="/register" exact component={isLogged ? LandingPage : RegisterPage} />
           <Route component={Error404}/>

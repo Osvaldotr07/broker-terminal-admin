@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import { Button } from "carbon-components-react";
+import { Button, Select, SelectItem, SelectItemGroup } from "carbon-components-react";
 import SubmitButton from "./SubmitButton";
 import { TitleArticle } from "../assets/styles/General-styles";
 
@@ -45,10 +45,10 @@ const WrapperForm = ({
                   alignItems: "center",
                 }}
               >
-                <TitleArticle>{title}</TitleArticle>
+              <TitleArticle>{title}</TitleArticle>
 
                 {step !== 0 ? (
-                  window.location.pathname === "/form"  ? (
+                  window.location.pathname === "/form" ? (
                     step !== undefined ? (
                       <Button
                         kind="secondary"
@@ -62,8 +62,7 @@ const WrapperForm = ({
                         Pre-guardar
                       </Button>
                     ) : null
-                  ) : (
-                    step !== undefined ?
+                  ) : step !== undefined ? (
                     <Button
                       kind="secondary"
                       size="field"
@@ -73,18 +72,17 @@ const WrapperForm = ({
                     >
                       Actualizar
                     </Button>
-                    : null
-                  )
+                  ) : null
                 ) : null}
               </div>
               {children}
-              <SubmitButton
+              {/* <SubmitButton
                 step={step}
                 setDirection={setDirection}
                 formData={formData}
                 setFormData={setFormData}
                 isConfirm={isConfirm}
-              />
+              /> */}
             </Form>
           </>
         )}

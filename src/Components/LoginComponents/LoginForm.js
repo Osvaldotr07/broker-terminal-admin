@@ -71,7 +71,7 @@ const LoginForm = ({ loginUser, isLogged, err }) => {
             console.log(reCaptRes)
             if(reCaptRes){
               setIsLoading(true);
-              await Promise.resolve(loginUser(values, "/init"));
+              await Promise.resolve(loginUser(values, "/myforms"));
             }
             errors ? setIsError(true) : setIsError(false);
           } catch (err) {

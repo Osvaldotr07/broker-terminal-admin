@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
-
+import axios from 'axios'
 //Componentes
 import {
-    Button,
-    Loading
+    Select, 
+    SelectItem, 
+    SelectItemGroup
 } from 'carbon-components-react'
 
 import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
 import { createOneForm, updateOneForm, sendUserEmail } from '../../actions/index'
-
+import { TitleArticle } from "../../assets/styles/General-styles";
 //Components
 import UserInfoForm from './UserInfoForm'
 import CompanyAddress from './CompanyAddress'
@@ -32,9 +33,41 @@ const ConfirmationData = (
     const [isLoading, setIsLoading] = useState(false)
     return (
         <>
+            <div style={{ marginTop: 70, maxWidth: 1000 }} className="form-container">
+                        <TitleArticle>Elige la opción para cambiar el estatus</TitleArticle>
+                        <Select id="select-1" defaultValue="placeholder-item" labelText='Cambiar estatus' onChange={async (evt) => {
+                            console.log(formData)
+                            formData.status = evt.target.value
+                            let response = await axios('api/forms/updateForm',{
+                                method: 'put',
+                                headers: {
+                                    "Content-type": "application/json",
+                                    Authorization: `Bearer ${tk}`
+                                },
+                                data: formData
+                            })
+                            console.log(response)
+                            if(response.status === 200) {
+                                console.log('Se ha cambiado correctamente')
+                                window.location.href = '/myForms'
+                            }
+                        }}>
+                            <SelectItem
+                            disabled
+                            hidden
+                            value="placeholder-item"
+                            text="Estatus"
+                            />
+                            <SelectItem value="aceptar" text="Aceptar" />
+                            <SelectItem value="rechazar" text="Rechazar" />
+                            <SelectItem value="pendiente" text="Validando" />
+                            <SelectItem value="pendiente" text="Esperando" />
+                        </Select>
+                    </div>
             {
                 !isLoading ?
                     <>
+                        
                         <UserInfoForm formData={formData} validationSchema={validationSchemaUser} isConfirm={true}/>
                         <CompanyForm formData={formData} validationSchema={validationSchemaCompany} isConfirm={true}/>
                         <CompanyAddress formData={formData} validationSchema={validationSchemaAddress} isConfirm={true}/>
@@ -54,23 +87,8 @@ const ConfirmationData = (
             }}
            >
                {({handleSubmit, isSubmiting}) => (
-                   <Form>
-                    {
-                        !isLoading ? 
-                            <Button
-                                className='button'
-                                type='submit'
-                                disabled={isSubmiting}
-                            >
-                                Enviar
-                            </Button>
-                        : 
-                        <>
-                            <h1>Gracias por el registro</h1>
-                            <Loading/>
-                        </>
-                    }
-                   </Form>
+                <Form>
+                </Form>
                )}
 
            </Formik>

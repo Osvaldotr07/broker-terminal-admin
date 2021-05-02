@@ -29,16 +29,23 @@ const FormTableWrapper = ({getForms, tk, email}) => {
     return (
         <div style={{'margin-top': 100}}>
             <FormTable 
-                title="Solicitudes registradas"
-                isDraft={false}
+                title="Solicitudes enviadas a revisar"
+                isDraft={true}
                 rows={rows.filter(item => item.status === 'Enviado')}
                 headers={headersInTablet.cabecerasEnviadas}
             />
             <br/>
             <FormTable 
-                title="Solicitudes preguardadas"
+                title="Solicitudes aceptadas"
                 isDraft={true}
-                rows={rows.filter(item => item.status === 'Preguardado')}
+                rows={rows.filter(item => item.status === 'aceptar')}
+                headers={headersInTablet.cabecerasPreguardadas}
+            />
+            <br/>
+            <FormTable 
+                title="Solicitudes rechazadas"
+                isDraft={true}
+                rows={rows.filter(item => item.status === 'rechazar')}
                 headers={headersInTablet.cabecerasPreguardadas}
             />
         </div>

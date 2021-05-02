@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/charts": "^0.41.50",
+    "@carbon/charts-react": "^0.41.50",
     "@carbon/colors": "^10.13.0",
     "@carbon/grid": "^10.15.0",
     "@carbon/icons-react": "^10.18.0",
@@ -20,6 +22,7 @@
     "carbon-components-react": "^7.20.0",
     "carbon-icons": "7.0.7",
     "countries-list": "^2.5.6",
+    "d3": "5.x",
     "formik": "^2.2.0",
     "history": "^5.0.0",
     "node-sass": "^4.14.1",

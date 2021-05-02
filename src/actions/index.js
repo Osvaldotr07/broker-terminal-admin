@@ -124,12 +124,11 @@ export const getForms = (token, email) => {
     return async(dispatch) => {
         try{
             let response = await axios('https://evening-chamber-26239.herokuapp.com/api/forms', {
-                method: 'post',
+                method: 'get',
                 headers: {
                     "Content-type": "application/json",
                     Authorization: `Bearer ${token}`
                 },
-                data: {email}
             })
 
             if(response.statusText){

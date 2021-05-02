@@ -100,7 +100,7 @@ const FormTable = ({
                         <OverflowMenu flipped style={actionButton}>
                           <Link to="/edit">
                             <OverflowMenuItem
-                              itemText="Editar"
+                              itemText="Verificar"
                               onClick={() => {
                                 dataToUpdate(row.id);
                               }}
@@ -109,7 +109,7 @@ const FormTable = ({
                             </OverflowMenuItem>
                           </Link>
 
-                          <OverflowMenuItem
+                          {/* <OverflowMenuItem
                             itemText="Eliminar"
                             onClick={() => {
                               setIsLoading(true)
@@ -117,7 +117,7 @@ const FormTable = ({
                             }}
                           >
                             Eliminar
-                          </OverflowMenuItem>
+                          </OverflowMenuItem> */}
                         </OverflowMenu>
                       </TableCell>
                     </TableRow>
